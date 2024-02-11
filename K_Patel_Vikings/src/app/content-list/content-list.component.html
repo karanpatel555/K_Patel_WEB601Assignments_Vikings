@@ -1,0 +1,14 @@
+<input type="text" (input)="searchContentByTitle()" placeholder="Enter title" size="40" />
+<button (click)="searchContentByTitle()">Search</button>
+<p>{{ searchMsg }}</p>
+
+<div *ngFor="let item of contentArray">
+  <app-content-card [content]="item"></app-content-card>
+</div>
+
+
+
+<hr />
+<!-- 
+<app-content-card *ngFor="let item of contentArray; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid red'}" [content]="item" class="card-wrapper">
+</app-content-card> -->
