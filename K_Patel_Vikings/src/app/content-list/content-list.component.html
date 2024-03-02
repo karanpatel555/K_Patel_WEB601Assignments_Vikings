@@ -1,0 +1,35 @@
+<h1>Vikings</h1>
+
+<div>
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Enter title here" size="40" />
+
+  <button (click)="searchContentByTitle()">Search</button>
+
+  <p [style.color]="isTitleFound ? 'green' : 'red'">
+    {{ searchMsg }}
+  </p>
+</div>
+
+<app-create-content (contentAdded)="handleContentSubmission($event)"></app-create-content>
+
+<h2>Content item with NO Type</h2>
+<app-content-card *ngFor="let item of contents | filterContent: ''; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
+</app-content-card>
+
+
+<hr />
+
+
+<h2>Content item with Sports Drama Type</h2>
+
+<app-content-card *ngFor="let item of contents | filterContent: 'Sports Drama'; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
+</app-content-card>
+
+
+<hr />
+
+
+<h2>Content item with Action Sports Type</h2>
+
+<app-content-card *ngFor="let item of contents | filterContent: 'Action Sports'; first as isFirst;" [ngStyle]="{'border': isFirst?'2px solid black': '1px solid blue'}" [content]="item" class="card-wrapper">
+</app-content-card>
