@@ -21,7 +21,7 @@ export class vikingsService {
 
     const content =(contentArray.find(content => content.id === id));
 
-    this.messageService.add(`Content Item at id: ${id}`);
+    this.messageService.add(``);
     return of(content);
   }
 }
